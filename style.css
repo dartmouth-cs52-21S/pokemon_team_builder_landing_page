@@ -1,0 +1,693 @@
+html{
+  font-size: 18px;
+  color: rgb(31,34,37);
+}
+body{
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(248,248,255);
+  text-align: center;
+  overflow-x: hidden;
+}
+/*checkbox hack*/
+#drop_down ~ .types{
+  display: none;
+}
+.types li{
+  margin-top: 10px;
+}
+#drop_down:checked ~ .types{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  top: 95px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 570px;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.1);
+  background-color:rgb(248,248,255);
+}
+#browse_menu [type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+/*end of checkbox hack section*/
+/*going through elements roughly following the order they appear in the html structure*/
+#top_menu{
+  font-size: .78rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  white-space: nowrap;
+}
+#top_menu > a{
+  background-color: rgb(31,34,37);
+  color: rgb(248,248,255);
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+#menu_items{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(248,248,255);
+  height: 4em;
+}
+#menu_items > ul > li {
+  padding-top: 5px;
+}
+#website_title{
+  display: flex;
+}
+#website_title > img{
+  height: 4em;
+  width: 4em;
+  padding-top: 5px;
+}
+#primary_menu, #secondary_menu{
+  display: flex;
+  flex-direction: row;
+}
+#secondary_menu{
+  margin-right: 30px;
+}
+#primary_menu :not(#browse_menu){
+  margin-right: 30px;
+}
+#secondary_menu :first-child{
+  margin-left: 55px;
+}
+#browse_menu i{
+  display: none;
+}
+#browse_menu p:nth-of-type(1){
+  font-size: .8em;
+  transform:scaleY(.1);
+  transform: translate(0px, -.8em);
+  margin-left: .2em;
+}
+#browse_menu:hover p:nth-of-type(1){
+  background-color: rgb(222, 238, 243);
+}
+#browse_menu label{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#main_call_to_action{
+  font-size: .83rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 4.5rem;
+  
+}
+#main_call_to_action h1{
+  font-size: 5.8em;
+  margin-bottom: 0;
+}
+#main_call_to_action h2{
+  position: relative;
+  bottom: 30px;
+}
+#main_call_to_action a{
+  position: relative;
+  bottom: 10px;
+}
+#main_images{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-width: 1000px;
+  height: auto;
+  max-height: 700px;
+  position: relative;
+  bottom: 50px;
+  z-index: -1;
+}
+#main_images img{
+  width: 20%;
+  min-width: 300px;
+}
+#main_images img:nth-of-type(3){
+  height: 39.5em;
+}
+#main_images img:nth-of-type(2n){
+  height: 36.5em;
+}
+#main_images img:nth-of-type(4n+1){
+  position: relative;
+  bottom: 35px;
+  height: 42em;
+}
+#statement_of_tools_purpose{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  background-color: rgb(222, 238, 243);
+  padding-bottom: 25px;
+}
+#statement_of_tools_purpose ul{
+  font-size: 1.67em;
+  display: flex;
+  justify-content: center;
+}
+#statement_of_tools_purpose ul li{
+  width: 10%;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+#starter_viewer{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+#starter_viewer h1{
+  margin-left: 100px;
+}
+#starter_viewer ul{
+  font-size: 1.33em;
+}
+/*The method for tabbed areas is adapted from the checkbox hack 
+  webpage that was linked to us: https://css-tricks.com/the-checkbox-hack/
+  It works almost exactly the same as the checkbox hack instead you use radio 
+  inputs. Radio inputs are a group of inputs where only one input can be on at 
+  a time. If an input is off a tab's content is made invisible through the opacity. 
+  If an input is on the opacity is set back to 1 to make it visible. The z-index is also changed
+  so that the tab being shown is on top so that the hovering can work. The positioning
+  of the tabs is also partly borrowed from this website as well. I just moved the tabs 
+  slightly right and added some centering for the content using flexboxes. 
+*/
+.starter_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.starter_content img{
+  height: 620px;
+  width: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+#starter_tabs{
+  position: relative;
+  min-height: 800px; 
+  clear: both;
+  margin: 25px 0;
+}
+.starter_tab{
+  float: left;
+}
+.starter_tab label{
+  position: relative;
+  left: 34vw;
+}
+.starter_tab label:hover{
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: rgb(136, 136, 136);
+}
+[type="radio"]:focus ~ label {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: rgb(136, 136, 136);
+}
+.starter_tab [type="radio"] {
+  opacity: 0;
+}
+.starter_content > * {
+  opacity: 0;
+  z-index: -1;
+}
+[type="radio"]:checked ~ label ~ .starter_content > * {
+  opacity: 1;
+  z-index: 1;
+}
+/*end of tabbed area section.*/
+/*The initial idea for making an overlay appear during mouse hover comes from the w3school tutorial:
+  https://www.w3schools.com/howto/howto_css_image_overlay.asp. I changed it so that it could work with
+  multiple images and have effects on two different elements, i.e. making an image pop out and text appear. 
+*/
+.pokemon{
+  font-weight: bolder;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.starter_overlay{
+  opacity: 0;
+  height: 620px;
+  width: 400px;
+  text-align: left;
+  position: relative;
+  bottom: 690px;
+  color: rgb(13, 14, 15);
+}
+.pokemon:hover > .starter_overlay{
+  opacity: 1;
+}
+.pokemon p{
+  background-color:rgb(222, 238, 243);
+  border:rgb(222, 238, 243);
+  border-radius: 30px;
+}
+.pokemon:hover > img, .pokemon:hover > p{
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+}
+/*end of overlay hover section*/
+#pokemon_types_collage h2{
+  font-weight: normal;
+  font-size: 1.22em;
+}
+#type_images{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 200px;
+}
+.type_image:nth-of-type(1){
+  position: relative;
+  left: 450px;
+  bottom: 30px;
+}
+.type_image:nth-of-type(2){
+  position: relative;
+  left: 570px;
+  top: 100px;
+}
+.type_image:nth-of-type(3){
+  position: relative;
+  top: 430px;
+  right: 250px;
+}
+.type_image:nth-of-type(4){
+  position: relative;
+  right: 940px;
+  top: 50px;
+}
+.type_image:nth-of-type(1) img{
+  height: 600px;
+  width: 400px;
+}
+.type_image:nth-of-type(1) p{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  position: relative;
+  right: 45px;
+  bottom: 560px;
+}
+.type_image:nth-of-type(2) img{
+  height: 400px;
+  width: 250px;
+}
+.type_image:nth-of-type(3) img{
+  height: 300px;
+  width: 225px;
+}
+.type_image:nth-of-type(4) img{
+  height: 400px;
+  width: 400px;
+}
+#sub_call_to_action{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#sub_call_to_action a{
+  font-size: .83em;
+}
+#sub_call_to_action div{
+  position: relative;
+  left: 12px;
+}
+footer{
+  background-color: rgb(222, 238, 243);
+  padding-top: 100px;
+  padding-bottom: 70px;
+  margin-top: 100px;
+}
+#footer_main_body{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+#footer_main_body > ul{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 60px;
+}
+#miscellaneous_links li, #social_media li{
+  margin-top: 20px;
+}
+footer form{
+  font-size: .7em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+  margin-top: 80px;
+}
+footer form label{
+  font-size: 1.2em;
+}
+footer form a{
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: rgb(173, 190, 207);
+}
+footer [type="text"]{
+  padding: .7em 1em .7em 1em;
+  font-size: 1.42em;
+}
+footer [type="text"]:focus{
+  outline-color: rgba(31,34,37);
+}
+footer [type="submit"]{
+  padding: 1.5em 1em 1.5em 1em;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 1.1em;
+  background-color: rgb(248,248,255);
+}
+footer [type="submit"]:active{
+  border: 4px solid rgb(31,34,37);
+}
+#bottom_links{
+  font-size: .9em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#bottom_links li{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/*end of html structure ordered section*/
+/*miscellaneous elements that appear in various places in the website*/
+img{
+  border: rgb(248,248,255);
+  border-radius: 10px;
+}
+ul{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.type_link{
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: .8em;
+  font-weight: normal;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  border: rgb(248,248,255);
+}
+.normal{
+  background: rgb(134, 134, 134);
+}
+.water{
+  background: rgb(6, 58, 231);
+}
+.fire{
+  background: rgb(252, 143, 2);
+}
+.grass{
+  background: rgb(122, 199, 76);
+}
+.electric{
+  background: rgb(221, 224, 49);
+}
+.ice{
+  background: rgb(93, 216, 238);
+}
+.fighting{
+  background: rgb(139, 8, 8);
+}
+.poison{
+  background: rgb(119, 5, 119);
+}
+.ground{
+  background: rgb(226, 191, 101);
+}
+.flying{
+  background: rgb(169, 143, 243);
+}
+.psychic{
+  background: rgb(249, 85, 135);
+}
+.bug{
+  background: rgb(166, 185, 26);
+}
+.rock{
+  background: rgb(182, 161, 54);
+}
+.ghost{
+  background: rgb(115, 87, 151);
+}
+.dragon{
+  background: rgb(111, 53, 252);
+}
+.dark{
+  background: rgb(112, 87, 70);
+}
+.steel{
+  background: rgb(183, 183, 206);
+}
+.fairy{
+  background: rgb(214, 133, 173);
+}
+.all{
+  background: rgb(223, 209, 216);
+}
+.register{
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 1.1em;
+  padding: 22px 50px 22px 50px;
+  background:rgb(31,34,37);
+  color:rgb(248,248,255);
+  font-weight: bold;
+  border-radius: 2px;
+}
+.register:hover{
+  transform: scale(1.05);
+  transition: transform .2s ease-in-out;
+}
+footer a:hover, .type_link:hover{
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: rgb(31,34,37);
+}
+.text_with_icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.text_with_icon img{
+  height: 3em;
+  width: 3em;
+  padding-left: 10px;
+  opacity: .88;
+}
+.text_with_icon > h1{
+  display: inline-block;
+}
+#starter_viewer .text_with_icon img, #pokemon_types_collage .text_with_icon img{
+  transform: rotate(-60deg);
+  width: 2em;
+  height: 2em;
+}
+/*end of miscellaneous elements section*/
+@media only screen and (max-width: 640px) {
+  html{
+    font-size: 12px;
+  }
+  #primary_menu :not(#browse_menu){
+    margin-right: 10px;
+  }
+  #browse_menu{
+    position: relative;
+    right: 10px;
+  }
+  #browse_menu > label > :not(i){
+    display: none;
+  }
+  #browse_menu .fas{
+    font-size: 2.5em;
+    position: relative;
+    bottom: 5px;
+  }
+  #browse_menu .fa-bars{
+    display: flex;
+  }
+  #drop_down:checked ~ label > .fa-times{
+    display: flex;
+  }
+  #drop_down:checked ~ label > .fa-bars{
+    display: none;
+  }
+  #drop_down:checked ~ .types{
+    position: fixed;
+    top: 69px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    height: 430px;
+  }
+  #website_title{
+    margin-right: 10px;
+  }
+  #website_title img{
+    padding-top: 4px;
+  }
+  #secondary_menu{
+    display: none;
+  }
+  #main_call_to_action h2{
+    position: relative;
+    bottom: 15px;
+  }
+  #main_images{
+    min-width: 100px;
+    position: relative;
+    top: 70px;
+    padding-bottom: 100px;
+  }
+  #main_images img:nth-of-type(4n+1){
+    width: 50%;
+  }
+  #main_images :not(img:nth-of-type(4n+1)){
+    display: none;
+  }
+  #statement_of_tools_purpose{
+    padding-bottom: 20px;
+  }
+  #statement_of_tools_purpose > ul li:nth-of-type(2n+3){
+    display: none;
+  }
+  #statement_of_tools_purpose > ul{
+    position: relative;
+    right: 20px;
+  }
+  #statement_of_tools_purpose > ul li{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  #starter_viewer{
+    margin-top: 110px;
+    margin-bottom: 180px;
+  }
+  #starter_viewer .text_with_icon img, #pokemon_types_collage .text_with_icon img{
+    padding-top: 5px;
+    position: relative;
+    right: 30px;
+  }
+  #starter_viewer h1{
+    margin-left: 30px;
+  }
+  #starter_tabs{
+    min-height: 240px; 
+  }
+  .starter_content img{
+    height: 180px;
+    width: 120px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 40px;
+  }
+  .starter_tab label{
+    position: relative;
+    left: 1em;
+  }
+  .starter_overlay{
+    height: 180px;
+    width: 120px;
+    position: relative;
+    bottom: 200px;
+    font-size: .7em;
+    text-align: center;
+  }
+  #type_images{
+    margin-bottom: 110px;
+  }
+  .type_image:nth-of-type(1){
+    position: relative;
+    left: 110px;
+    bottom: 0px;
+  }
+  .type_image:nth-of-type(2){
+    position: relative;
+    left: 140px;
+    top: 0px;
+  }
+  .type_image:nth-of-type(3){
+    position: relative;
+    top: 300px;
+    right: 150px;
+  }
+  .type_image:nth-of-type(4){
+    position: relative;
+    right: 100px;
+    top: 250px;
+  }
+  .type_image:nth-of-type(1) img{
+    height: 400px;
+    width: 250px;
+  }
+  .type_image:nth-of-type(1) p{
+    position: relative;
+    right: 40px;
+    bottom: 280px;
+  }
+  .type_image:nth-of-type(2) img{
+    height: 160px;
+    width: 140px;
+  }
+  .type_image:nth-of-type(3) img{
+    height: 133px;
+    width: 100px;
+  }
+  .type_image:nth-of-type(4) img{
+    height: 160px;
+    width: 140px;
+  }
+  footer{
+    padding-top: 10px;
+    margin-top: 110px;
+  }
+  #footer_main_body{
+    flex-direction: column;
+  }
+  #footer_main_body > ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #footer_main_body > form{
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  #bottom_links li{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
