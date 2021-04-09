@@ -24,6 +24,14 @@ A few things did not quite work. For instance, the tabs in the Pokemon Starter c
 
 For extra credit, I implemented the "Browse/hamburger" drop down menu which is the checkbox hack you were describing. Instead of popping up a big overlay, it creates a simple drop down menu when pressed. I implemented a tabbed areas section(Pokemon Starter Chooser) which is based off of the tabbed area method described in the checkbox website you linked to us. It uses radio inputs instead of a checkbox input to create different tabs you can select between. It switches between tabs that include pictures that you can hover over and they pop out displaying text. I got the idea for this from a w3schools tutorial on hoverable images (I linked the w3school tutorial in my code). It was different from the tutorial in the way that I had to figure out how to get the overlay to display and the image to pop up at the same time when the mouse was over an image. Getting the text overlay, hover, and tabbed area to work together was a little bit of a challenge to say the very least. 
 
+Here is some images of the Pokemon Starter Chooser:
+![screenshot 1](/potential_extra_credit_1.png?raw=true)
+![screenshot 2](/potential_extra_credit_2.png?raw=true)
+
+Here is some images of the Browse/hamburger menu:
+![screenshot 3](/potential_extra_credit_3.png?raw=true)
+![screenshot 4](/potential_extra_credit_4.png?raw=true)
+
 ## Screenshots
 ![screenshot 1](/screencaps/html_screencap_1.png?raw=true)
 ![screenshot 2](/screencaps/html_screencap_2.png?raw=true)
